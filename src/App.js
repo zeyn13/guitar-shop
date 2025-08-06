@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import BrandsPage from "./pages/BrandsPage";
 import ModelsPage from "./pages/ModelsPage";
 import GuitarDetailsPage from "./pages/GuitarDetailsPage";
-import Layout from "./components/Layout";
 import { LanguageProvider } from "./context/LanguageContext";
 import Footer from "./components/Footer";
 
@@ -10,7 +9,6 @@ function App() {
   return (
     <LanguageProvider>
       <Router>
-        <Layout>
           <Routes>
             <Route path="/" element={<BrandsPage />} />
             <Route path="/brand/:brandId" element={<ModelsPage />} />
@@ -19,7 +17,6 @@ function App() {
 
           </Routes>
           <Footer />
-        </Layout>
       </Router>
     </LanguageProvider>
   );
