@@ -1,6 +1,42 @@
-# Getting Started with Create React App
+# VibeStrings – Guitar Shop Assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a 3-page guitar shop web application built as part of the **Software Engineer Intern Assignment** using **React** and **Apollo Client**. The app allows users to browse guitar brands, explore models, and view detailed specifications of selected guitars — all with internationalization (i18n) support and responsive design.
+
+## Features
+
+- **Brands Page** – Browse available guitar brands.
+- **Models Page** – View all models for a selected brand with:
+  - Search
+  - Type filter (All, Electric, Acoustic, Bass)
+  - Pagination
+- **Details Page** – See specifications and musicians for a selected guitar.
+- **Multi-language support** – English, Macedonian, Albanian.
+- **Mobile responsive** – Optimized view for mobile screens.
+- **GraphQL + Apollo Client** – Fully integrated with live GraphQL API.
+
+
+## Technologies Used
+
+- React
+- Apollo Client
+- GraphQL
+- Tailwind CSS
+- React Router
+- Headless UI
+- Context API (for language switching)
+
+---
+
+## Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/zeyn13/guitar-shop.git
+cd guitar-shop
+
+2. Install Dependencies
+npm install
 
 ## Available Scripts
 
@@ -10,61 +46,58 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##GraphQL API
+All guitar data is fetched from a live hosted GraphQL API:
+https://graphql-api-brown.vercel.app/api/graphql
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##Pages Overview
+/ – Brands Page
+Displays a list of guitar brands. Clicking a brand navigates to the models.
 
-### `npm run build`
+/brand/:brandId – Models Page
+Lists all models of the selected brand, including:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Type filters (All, Electric, Acoustic, Bass)
+- Search input
+- Pagination
+- Language switcher
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+/brand/:brandId/guitar/:guitarId – Guitar Details
+Shows detailed specs and musicians related to a specific guitar. Tabs available:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Specification
+- Who plays it?
 
-### `npm run eject`
+##Language Support
+Supports three languages via a custom LanguageContext:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- English (EN)
+- Macedonian (MK)
+- Albanian (SQ)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Language is stored in localStorage and persists between sessions.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+##Folder Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+src/
+├── components/
+│   └── FilterDropdown.js
+├── context/
+│   └── LanguageContext.js
+├── pages/
+│   ├── BrandsPage.js
+│   ├── ModelsPage.js
+│   └── GuitarDetailsPage.js
+├── App.js
+├── index.js
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+##Author
+Zeynep LIKA
+GitHub: [https://github.com/zeyn13/guitar-shop.git]
+Email: likazeynep@gmail.com
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+](https://github.com/zeyn13)
